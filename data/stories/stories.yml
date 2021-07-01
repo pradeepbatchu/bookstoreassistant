@@ -1,0 +1,59 @@
+version: "2.0"
+stories:
+  - story: store_location
+    steps:
+    - intent: store_location
+    - action: action_store_location
+    
+  - story: customer_contact
+    steps:
+    - intent: customer_contact
+    - action: utter_customer_contact   
+    
+  - story: customer_shop_by_categories
+    steps:
+    - intent: customer_shop_by_categories
+    - action: utter_customer_shop_by_categories
+    
+  - story: Customer_main_menu
+    steps:
+    - intent: customer_help
+    - action: utter_customer_help
+ 
+  - story: customer_products
+    steps:
+    - intent: products_list
+    - action: action_product
+ 
+  - story: customer_book_search_name
+    steps:
+    - intent: product_search
+      entities:
+      - productname: "The Hobbit" 
+    - action: action_product_search
+    - slot_was_set:
+      - productname: [{"productname": "The Hobbit"}]
+  
+  - story: customer_book_search_name_more
+    steps:
+    - intent: more_product
+    - action: action_more_product
+    - slot_was_set:
+      - productname: [{"productname": "The Hobbit"}]
+        
+  - story: customer_track_my_order
+    steps:
+    - intent: customer_greet
+    - action: action_greet
+    - intent: customer_track_my_order
+    - action: action_trackmyorder_order_list
+    - action: utter_conversation_continue
+    
+  - story: cancel_orders_list
+    steps:
+    - intent: customer_greet
+    - action: action_greet
+    - intent: cancel_order
+    - action: action_cancel_order_list
+    - action: utter_conversation_continue
+  

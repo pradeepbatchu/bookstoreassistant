@@ -1,0 +1,430 @@
+version: "2.0"
+nlu:
+  - regex: productname
+    examples: |
+      - [a-zA-Z]
+  - synonym: book
+    examples: |
+      - products
+      - book
+      - books
+      - product
+  - intent: product_search
+    examples: |
+      - I need to find [Harry Potter And the Sorcerer's Stone]{"entity":"productname","value":"Harry Potter And the Sorcerer's Stone"}
+      - I need to find the book [dollar bahu]{"entity":"productname","value":"Dollar Bahu"}
+      - I need to find [wings of fire]{"entity":"productname","value":"Wings of Fire"}
+      - need to find [breaking new ground]{"entity":"productname","value":"Breaking New Ground"}
+      - find [the midnight library: a novel]{"entity":"productname","value":"The Midnight Library: A Novel"}
+      - find the book [to kill a mockingbird]{"entity":"productname","value":"To Kill A Mockingbird"}
+      - find the book [the power of a positive attitude: your road to success]{"entity":"productname","value":"The Power of A Positive Attitude: Your Road To Success"}
+      - find the book [Wizard Howl's Flying Castle]{"entity":"productname","value":"Wizard Howl's Flying Castle"}
+      - I look for the book [prosper's demon]{"entity":"productname","value":"Prosper's Demon"}
+      - I look for [you are the best wife: a true love story]{"entity":"productname","value":"You are the Best Wife: A True Love Story"}
+      - I want to find the book [the arabian nights]{"entity":"productname","value":"The Arabian Nights"}
+      - want to find this book: [atomic habits]{"entity":"productname","value":"Atomic habits"}
+      - need to find this book: [the it in science book of datalogging and control]{"entity":"productname","value":"The IT in Science Book of Datalogging and Control"}
+      - I want to find a book called [modern physical organic chemistry]{"entity":"productname","value":"Modern Physical Organic Chemistry"}
+      - need to find a book called [man's search for meaning]{"entity":"productname","value":"Man's Search For Meaning"}
+      - Is there a book with me [falling for your best friend's twin]{"entity":"productname","value":"Falling for Your Best Friend's Twin"}
+      - Do you have [a wealth of pigeons: a cartoon collection]{"entity":"productname","value":"A Wealth of Pigeons: A Cartoon Collection"}
+      - I need to find [draw your day: an inspiring guide to keeping a Sketch Journal]{"entity":"productname","value":"Draw Your Day: An Inspiring Guide to Keeping a Sketch Journal"}
+      - find the book [blossom story book for kids]{"entity":"productname","value":"Blossom Story Book for Kids"}
+      - Is there a book called [the power of color]{"entity":"productname","value":"The Power of Color"}
+      - Does our side have [new honey book]{"entity":"productname","value":"New honey book"}
+      - I need to find [social policy and welfare]{"entity":"productname","value":"Social Policy and Welfare"}, do you have one
+      - I need to find [learning science]{"entity":"productname","value":"Learning Science"}, do you not
+      - Need to find the book [life of Pi]{"entity":"productname","value":"Life of Pi"}
+      - Want to find the book [modern comfort food: A Barefoot Contessa]{"entity":"productname","value":"Modern Comfort Food: A Barefoot Contessa"}
+      - Is there a book [sherlock homles]{"entity":"productname","value":"Sherlock Homles"}
+      - Is there [the boy, the mole, the fox and the horse]{"entity":"productname","value":"The Boy, the Mole, the Fox and the Horse"}
+      - The book [indian icon: a cult called royal enfield hardcover]{"entity":"productname","value":"Indian Icon: A Cult Called Royal Enfield Hardcover"} does not
+      - The book [play google's game]{"entity":"productname","value":"Play Google's Game"} has no
+      - Can I ask if you have the book [wild game: my mother, her secret, and mewild game]{"entity":"productname","value":"Wild Game: My Mother, Her Secret, and MeWild Game"}
+      - Do you have [humans]{"entity":"productname","value":"Humans"}
+      - Dude, do you have [google classroom for teachers]{"entity":"productname","value":"GOOGLE CLASSROOM FOR TEACHERS"}
+      - Is there a [a time for mercy Jake Brigance]{"entity":"productname","value":"A Time for Mercy Jake Brigance"}
+      - I need [jeffrey stein]{"entity":"productname","value":"Jeffrey Stein"} if you have one
+      - I want to find [art hurley]{"entity":"productname","value":"Art Hurley"}
+      - I want to find [delmar hoffman]{"entity":"productname","value":"Delmar Hoffman"}
+      - Is there a book [Elias Silva]{"entity":"productname","value":"Elias Silva"}
+      - find the book [the death and life of great american cities]{"entity":"productname","value":"The Death and Life of Great American Cities"}
+      - looking for the book [encyclopedia of general science]{"entity":"productname","value":"Encyclopedia of General Science"}
+      - looking for the book [the works]{"entity":"productname","value":"The works"}
+      - I'm looking for [grumpy monkey]{"entity":"productname","value":"Grumpy Monkey"}
+      - I'm looking for [draw your day]{"entity":"productname","value":"Draw Your Day"}
+      - I'm looking for the book [game of thrones]{"entity":"productname","value":"Game of Thrones"}
+      - I'm looking for the book [Behavior Like A Woman Thinks Like A Man]{"entity":"productname","value":"Behavior Like A Woman Thinks Like A Man"}
+      - find [turning point]{"entity":"productname","value":"Turning Point"}
+      - Is there [a promised land hardcover]{"entity":"productname","value":"A Promised Land Hardcover"}
+      - Is there [365 adventure stories]{"entity":"productname","value":"365 Adventure stories"}
+      - is there a [charlotte's Web]{"entity":"productname","value":"Charlotte's Web"}
+      - [the time machine]{"entity":"productname","value":"The Time Machine"} does not.
+      - [dreams from my father: a story of race and inheritance]{"entity":"productname","value":"Dreams from My Father: A Story of Race and Inheritance"} has not
+      - Do you have the book [short stories for children]{"entity":"productname","value":"Short Stories for Children"}?
+      - [ethnic decorative feathers hanging On threads printed]{"entity":"productname","value":"Ethnic Decorative Feathers Hanging On Threads Printed"} yes
+      - [the power of color]{"entity":"productname","value":"The Power of Color"}
+      - [words Of nietzsche for young people]{"entity":"productname","value":"Words Of Nietzsche For Young People"}
+      - [your name]{"entity":"productname","value":"Your Name"}
+      - [Anne Frank's Diary]{"entity":"productname","value":"Anne Frank's Diary"}
+      - [the Hobbit]{"entity":"productname","value":"The Hobbit"}
+      - [harry Potter And the Sorcerer's Stone]{"entity":"productname","value":"Harry Potter And the Sorcerer's Stone"}
+      - [Game of Thrones]{"entity":"productname","value":"Game of Thrones"}
+      - [the mythology book]{"entity":"productname","value":"The mythology book"}
+      - [grumpy Monkey]{"entity":"productname","value":"Grumpy Monkey"}
+      - [behavior Like A Woman Thinks Like A Man]{"entity":"productname","value":"Behavior Like A Woman Thinks Like A Man"}
+      - [humans]{"entity":"productname","value":"Humans"} is there?
+      - [art Hurley]{"entity":"productname","value":"Art Hurley"} is there?
+      - [jeffrey stein]{"entity":"productname","value":"Jeffrey Stein"} is there?
+      - [delmar hoffman]{"entity":"productname","value":"Delmar Hoffman"}
+      - [elias Silva]{"entity":"productname","value":"elias Silva"}
+      - [jim henson: the art, the magic, the imagination]{"entity":"productname","value":"Jim Henson: The Art, the Magic, the Imagination"}
+
+  - regex: number
+    examples: |
+      - [0-9]
+  - intent: product_search_by_price
+    examples: |
+      - Show me books whos price is [greater than]{"entity":"more_less","value":"greater than"} [5000]{"entity":"number","value":"5000"}
+      - Show me books whos price is [less than]{"entity":"more_less","value":"less than"} [3000]{"entity":"number","value":"3000"}
+      - Show me books whos price is [less than]{"entity":"more_less","value":"less than"} [5000]{"entity":"number","value":"5000"}
+      - Show me books whos price is [less than]{"entity":"more_less","value":"less than"} [4000]{"entity":"number","value":"4000"}
+      - Show me books whos price is [less than]{"entity":"more_less","value":"less than"} [2000]{"entity":"number","value":"2000"}
+      - Show me books whos price is [less than]{"entity":"more_less","value":"less than"} [1000]{"entity":"number","value":"1000"}
+      - Show me books whos price is [<]{"entity":"more_less","value":"<"} [1000]{"entity":"number","value":"1000"}
+      - Show me books whos price is [<]{"entity":"more_less","value":"<"} [2000]{"entity":"number","value":"2000"}
+      - Show me books whos price is [<=]{"entity":"more_less","value":"<="} [3000]{"entity":"number","value":"3000"}
+      - Show me books whos price is [<=]{"entity":"more_less","value":"<="} [1000]{"entity":"number","value":"1000"}
+      - Show all books whos price is [>=]{"entity":"more_less","value":"=>"} [1000]{"entity":"number","value":"1000"}
+      - Show all books whos price is [>=]{"entity":"more_less","value":"=>"} [2000]{"entity":"number","value":"2000"}
+      - Show all books whos price is [>]{"entity":"more_less","value":">"} [3000]{"entity":"number","value":"3000"}
+      - Show all books whos price is [>]{"entity":"more_less","value":">"} [4000]{"entity":"number","value":"4000"}
+      - Show all books whos price is [>]{"entity":"more_less","value":">"} [5000]{"entity":"number","value":"5000"}
+      - Show all books price [more than]{"entity":"more_less","value":"more than"} [1000]{"entity":"number","value":"1000"}
+      - Show all books price [lesser than]{"entity":"more_less","value":"lesser than"} [1000]{"entity":"number","value":"1000"}
+      - Show all books whos price is [greater than]{"entity":"more_less","value":"greater than"} [1000]{"entity":"number","value":"1000"}
+      - Show all books whos price is [greater than]{"entity":"more_less","value":"greater than"} [2000]{"entity":"number","value":"2000"}
+      - Show all books whos price is [greater than]{"entity":"more_less","value":"greater than"} [3000]{"entity":"number","value":"3000"}
+      - Show all books whos price is [greater than]{"entity":"more_less","value":"greater than"} [4000]{"entity":"number","value":"4000"}
+      - Show all books whos price is [greater than]{"entity":"more_less","value":"greater than"} [5000]{"entity":"number","value":"5000"}
+      - Show all books whos price is [greater than]{"entity":"more_less","value":"greater than"} [6000]{"entity":"number","value":"6000"}
+      - Show all books whos price is [greater than]{"entity":"more_less","value":"greater than"} [7000]{"entity":"number","value":"7000"}
+      - Show all books whos price is [greater than]{"entity":"more_less","value":"greater than"} [8000]{"entity":"number","value":"8000"}
+      - Show all books whos price is [greater than]{"entity":"more_less","value":"greater than"} [9000]{"entity":"number","value":"9000"}
+      - Show all books whos price is [greater than]{"entity":"more_less","value":"greater than"} [1000]{"entity":"number","value":"1000"}
+      - Show all books whos price is [greater than]{"entity":"more_less","value":"greater than"} [11000]{"entity":"number","value":"11000"}
+      - Show all books whos price is [greater than]{"entity":"more_less","value":"greater than"} [12000]{"entity":"number","value":"12000"}
+      - Show all books whos price is [greater than]{"entity":"more_less","value":"greater than"} [1000]{"entity":"number","value":"1000"}
+      - Show me books whos price is [greater than]{"entity":"more_less","value":"greater than"} [2000]{"entity":"number","value":"2000"}
+      - Show me books whos price is [greater than and equal]{"entity":"more_less","value":"less than and equal"}{"entity":"more_less","value":"greater than and equal"} [2000]{"entity":"number","value":"2000"}
+      - Show me books whos price is [less than]{"entity":"more_less","value":"less than"} [4000]{"entity":"number","value":"4000"}
+      - Show me books whos price is [less than and equal]{"entity":"more_less","value":"less than and equal"} [4000]{"entity":"number","value":"4000"}
+
+  - regex: price
+    examples: |
+      - [0-9]
+  - intent: product_search_by_range
+    examples: |
+      - Show me books between [50]{"entity": "price", "role": "min"} to [100]{"entity": "price", "role": "max"}.
+      - Show me books between [100]{"entity": "price", "role": "min"} to [250]{"entity": "price", "role": "max"}.
+      - Show me books between [60]{"entity": "price", "role": "min"} to [150]{"entity": "price", "role": "max"}.
+      - Show me books between [70]{"entity": "price", "role": "min"} to [170]{"entity": "price", "role": "max"}.
+      - Show me books between [50]{"entity": "price", "role": "min"} to [170]{"entity": "price", "role": "max"}.
+      - Show me books between [30]{"entity": "price", "role": "min"} to [170]{"entity": "price", "role": "max"}.
+      - Show me books between [10]{"entity": "price", "role": "min"} to [170]{"entity": "price", "role": "max"}.
+      - Show me books between [80]{"entity": "price", "role": "min"} to [170]{"entity": "price", "role": "max"}.
+      - Show me books between [90]{"entity": "price", "role": "min"} to [170]{"entity": "price", "role": "max"}.
+      - Show me books between [10]{"entity": "price", "role": "min"} to [170]{"entity": "price", "role": "max"}.
+      - Show me books between [20]{"entity": "price", "role": "min"} to [170]{"entity": "price", "role": "max"}.
+      - Show me books between [30]{"entity": "price", "role": "min"} to [170]{"entity": "price", "role": "max"}.
+      - Show me books between [50]{"entity": "price", "role": "min"} to [170]{"entity": "price", "role": "max"}.
+      - Show me books between [40]{"entity": "price", "role": "min"} to [170]{"entity": "price", "role": "max"}.
+      - Show me books between [40]{"entity": "price", "role": "min"} to [190]{"entity": "price", "role": "max"}.
+      - Show me books between [90]{"entity": "price", "role": "min"} to [200]{"entity": "price", "role": "max"}.
+      - Show me books between [150]{"entity": "price", "role": "min"} to [200]{"entity": "price", "role": "max"}.
+      - Show me books between [250]{"entity": "price", "role": "min"} to [400]{"entity": "price", "role": "max"}.
+
+  - regex: author_name
+    examples: |
+      - [a-zA-Z]
+  - intent: product_search_by_author_name
+    examples: |
+      - Show me books by [Wendy MacNaughton]{"entity": "author_name", "value": "Wendy MacNaughton"}
+      - Show me books by author [Wendy MacNaughton]{"entity": "author_name", "value": "Wendy MacNaughton"}
+      - Show me books by [Jeff Kenny]{"entity": "author_name", "value": "Jeff Kenny"}
+      - Show books by [Danielle Steel]{"entity": "author_name", "value": "Danielle Steel"}
+      - Show books of [Wendy MacNaughton]{"entity": "author_name", "value": "Wendy MacNaughton"}
+      - find books of [Harper Lee]{"entity": "author_name", "value": "Harper Lee"}
+      - find books of [Jessie Burtun]{"entity": "author_name", "value": "Jessie Burtun"}
+      - find books of [Delia Owens]{"entity": "author_name", "value": "Delia Owens"}
+      - find books of [john]{"entity": "author_name", "value": "john"}
+      - find books of [sudha murthy]{"entity": "author_name", "value": "sudha murthy"}
+      - Show me books by [E L James]{"entity": "author_name", "value": "E L Jamesn"}
+      - I want to buy books of [E L James]{"entity": "author_name", "value": "E L Jamesn"}
+      - Show me books by [E John]{"entity": "author_name", "value": "E John"}
+      - Show me books by [Jessie Burtun]{"entity": "author_name", "value": "Jessie Burtun"}
+      - Get me books of [PAULA HAWKINS]{"entity": "author_name", "value": "PAULA HAWKINS"}
+      - Get me list of books by [PAULA HAWKINS]{"entity": "author_name", "value": "PAULA HAWKINS"}
+      - Get me list of books by [Suzanne Lang]{"entity": "author_name", "value": "Suzanne Lang"}
+      - Get me list of books by [J.K. Rowling]{"entity": "author_name", "value": "J.K. Rowling"}
+      - Get me list of books by [John Grisham]{"entity": "author_name", "value": "John Grisham"}
+      - Get me list of books by [J.R.R. Tolkien]{"entity": "author_name", "value": "J.R.R. Tolkien"}
+      - Get me list of books by [Bruno Latour]{"entity": "author_name", "value": "Bruno Latour"}
+      - Get me list of books by [Barack Obama]{"entity": "author_name", "value": "Barack Obama"}
+      - Get me list of books by [Marronite]{"entity": "author_name", "value": "Marronite"}
+      - [suzanne lang]{"entity": "author_name", "value": "Suzanne Lang"}
+      - [jessie burtun]{"entity": "author_name", "value": "Jessie Burtun"}
+      - [barack obama]{"entity": "author_name", "value": "Barack Obama"}
+      - [sudha murthy]{"entity": "author_name", "value": "Sudha murthy"}
+      - [barry adams]{"entity": "author_name", "value": "Barry Adams"}
+      - [samantha dion baker]{"entity": "author_name", "value": "Samantha Dion Baker"}
+      - [DK]{"entity": "author_name", "value": "DK"}
+      - [dj sammy]{"entity": "author_name", "value": "DJ Sammy"}
+      - [lucy maconnell]{"entity": "author_name", "value": "Lucy Maconnell"}
+      - [eric v. anslyn]{"entity": "author_name", "value": "Eric V. Anslyn"}
+      - [lucy maconnell]{"entity": "author_name", "value": "Lucy Maconnell"}
+      - [g. krishnan]{"entity": "author_name", "value": "G. Krishnan"}
+
+
+  - intent: products_list
+    examples: |
+      - Find products
+      - show products
+      - show products
+      - show products list
+      - products list
+      - lets shop
+      - display all products
+      - products on sale
+      - Todays Best Deals
+      - Childrens Books
+      - Story Books
+      - Fiction & Novel Test
+      - Biographies & Momories
+      - Art & Photography
+      - Mystery & Suspence
+      - Shop Online
+      - shop online
+      - Shopping online
+      - lets shop
+
+  - intent: more_product
+    examples: |
+      - more products
+      - show me more products
+      - more products list
+      - dispaly more products
+
+  - intent: store_location
+    examples: |
+      - your store locations
+      - your store location
+      - your location
+      - show your location
+      - your locations
+      - store locations
+      - Store locations
+      - Store location
+      - store location
+      - locations
+      - location
+      - find the store location
+      - find the store locations
+      - where is your store location
+      - where is your store
+      - locate your store
+      - locate your store
+
+  - intent: customer_contact
+    examples: |
+      - Contact Us
+      - contact us
+      - reach me
+      - Reach me
+      - talk to me
+      - Talk to me
+      - Find us
+      - find us
+      - talk to us
+      - Talk to us
+      - reach us
+      - Reach us
+      - human agent
+      - can you tranfer me to human agent
+      - talk to real agent
+
+  - intent: conversation_continue
+    examples: |
+      - further query
+      - further questions
+      - continue conversation
+      - continue
+
+  - intent: cancel_order
+    examples: |
+      - Need to cancel orders
+      - Need to cancel Orders
+      - Need to cancel Order
+      - Need to cancel Order
+      - Need to Cancel my orders
+      - Need to cancel my order
+      - order cancel
+      - order cancel
+      - order cancels
+      - order cancel
+      - order cancellations
+      - order cancellations
+      - order cancellation
+      - order cancellation
+      - cancel my Orders
+      - cancel my order
+      - cancel my order
+      - cancel my orders
+      - cancel my orders
+      - cancel my orders
+      - cancel order
+      - cancel ordr
+      - cancel ordr
+
+  - intent: customer_shop_by_categories
+    examples: |
+      - Shop By Categories
+      - shop By categories
+      - Shop By Categories
+      - shop by categories
+      - Shop By Categories
+      - products by categories
+      - products by categories
+      - shop by Categories list
+      - shop by Categories list
+      - categories
+      - categories
+      - category
+      - category
+
+  - intent: customer_menu
+    examples: |
+      - menu
+      - Menu
+      - show menu
+      - show me menu
+      - show Menu
+      - show me things
+      - what can you do for me
+      - capabilities
+      - your capabilities
+      - show me what you can do
+      - show me
+  - intent: customer_track_my_order
+    examples: |
+      - Track My Order
+      - Track my orders
+      - Track my order
+      - track my order
+      - get my orders list
+      - get my orders list
+      - track my order
+      - I want to track my orders
+      - I want to track My order
+      - I want to check my orders
+      - Order List
+      - Orders list
+      - orders list
+      - orders list
+      - get order list
+      - get order list
+      - get orders list
+      - get my order list
+      - my order list
+      - my order list
+      - show my order list
+      - show my order list
+      - show my orders list
+      - show my all orders
+      - My order list
+      - my order list
+      - Order status
+      - Order status
+      - I want to see my order list
+      - I want to see my order list
+      - list my orders
+      - show my order list
+      - give my orders list
+      - give my order list
+      - get my orders list
+      - my latest orders list
+      - my latest orders list
+      - I need to check orders list
+      - I need to check orders list
+
+
+
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to human?
+      - let have cup of tea
+      - asjdkjad asdljalsdjka sd
+      - alksjdlkjasd asldjlajksdasd
+      - akjdsjlasdlkjasdk asdasd
+      - qweqweqweqeoquiweoiqwe
+      - asdlkasjdkljasd
+      - zxmcnbzmxcbmzbxcb
+      - 1238798172398719237981723987189273
+      - qweasdjaj&%%&^%&^!!@U!@(#(!*&@#(*&!(*@&#
+
+  - intent: feedback
+    examples: |
+      - Excellent
+      - excellent
+      - excellent
+      - Poor
+      - poor
+      - poor
+      - Good
+      - Good
+      - good
+      - Average
+      - Average
+      - average
+      
+  - intent: shipping_address
+    examples: |
+      - get my shipping address
+      - show my shipping address
+      - shipping address
+      - get my account address
+      - shipping address info
+      - what is my shipping address
+      - where is my shipping delivering
+      
+  - intent: user_address
+    examples: |
+      - get my address
+      - show my address
+      - address
+      - what is my address
+      - my address please
+      - show my address
+      - address info
+      
+  - intent: user_informations
+    examples: |
+      - get my account info
+      - show my informations
+      - my informations
+      - what is my account informations
+      - my account deatails please
+      - show my account deatails
+      - account info
+      
+  - intent: outofdomain
+    examples: |
+      - i am waiting
+      - i need travel ticket toreimbursement the same
+      - i can set up new recurring orders
+      - please check that problem
+      
+      

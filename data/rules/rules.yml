@@ -1,0 +1,154 @@
+version: "2.0"
+rules:
+  - rule: Ask user to rephrase the query whenever user sends a query with low NLU confidence 
+    steps:
+      - intent: nlu_fallback
+      - action: utter_default
+      
+  - rule: Ask user to rephrase the query whenever user search for product name with wrong title
+    steps:
+      - intent: nlu_fallback
+      - action: utter_default
+      
+  - rule: greet user whenever user greets the bot
+    steps:
+      - intent: customer_greet
+      - action: action_greet
+      
+  - rule: Ask user to share the feedback when user ends search query
+    steps:
+      - intent: customer_end_conversation
+      - action: utter_customer_end_conversation
+      
+  - rule: Say goodbye anytime when user says goodbye
+    steps:
+      - intent: customer_goodbye
+      - action: utter_customer_bye
+      
+  - rule: Ask user to rephrase the query whenever user search with inappropriate query
+    steps:
+      - intent: bot_challenge
+      - action: utter_default
+
+  - rule: affirm
+    steps:
+      - intent: affirm
+      - action: utter_ask_affirm
+      
+  - rule: Response with a chitchat utterance whenever user indulges in some chitchat
+    steps:
+      - intent: chitchat
+      - action: utter_chitchat
+
+
+  - rule: whenever user sends a query to search for a product name or product title
+    steps:
+    - intent: product_search
+      entities:
+      - productname: "The Hobbit"
+    - action: action_product_search
+    - slot_was_set:
+      - productname: [{"productname": "The Hobbit"}]
+
+  - rule: action_feedback
+    steps:
+    - intent: feedback
+    - action: action_feedback
+
+  - rule: Respond with store_location whenever user ask for store location
+    steps:
+    - intent: store_location
+    - action: action_store_location
+
+#  - rule: Respond with action_product_search_mutiple_entities whenever user ask for store location
+#    steps:
+#    - intent: action_product_search_mutiple_entities
+#    - action: action_product_search_mutiple_entities
+
+  - rule: Respond with customer_contact whenever user enquire about contact details
+    steps:
+    - intent: customer_contact
+    - action: utter_customer_contact
+
+  - rule: shop online
+    steps:
+    - intent: customer_shop
+    - action: utter_customer_shop_by_categories
+
+  - rule: Respond with product_search_by_price whenever user search for product price 
+    steps:
+      - intent: product_search_by_price
+      - action: action_product_search_by_price
+
+  - rule: Respond with product_search_by_range whenever user query to find products by price range
+    steps:
+      - intent: product_search_by_range
+      - action: action_product_search_by_range
+
+  - rule: Respond with action_product_search_by_author_name whenever user search for products by author name
+    steps:
+      - intent: product_search_by_author_name
+      - action: action_product_search_by_author_name
+
+  - rule: Respond with  products list whenever user search or query for products list
+    steps:
+      - intent: products_list
+      - action: action_product
+
+  - rule: customer_shop_by_categories
+    steps:
+    - intent: customer_shop_by_categories
+    - action: utter_customer_shop_by_categories
+    
+  - rule: react_negative
+    steps:
+    - intent: react_negative
+    - action: utter_canthelp
+    
+  - rule: customer_track_my_order
+    steps:
+    - intent: customer_track_my_order
+    - action: action_trackmyorder_order_list
+    - action: utter_conversation_continue
+    
+  - rule: whenever user cancel order respond with cancel_order list
+    steps:
+    - intent: cancel_order
+    - action: action_cancel_order_list
+    - action: utter_conversation_continue
+
+  - rule: whenever user requests shipping_address
+    steps:
+    - intent: shipping_address
+    - action: action_show_user_address
+    - action: utter_conversation_continue
+    
+  - rule: whenever user requests address info
+    steps:
+    - intent: user_address
+    - action: action_user_address
+    - action: utter_conversation_continue
+
+  - rule: whenever user requests accoumt info
+    steps:
+    - intent: user_informations
+    - action: action_account_info
+    - action: utter_conversation_continue
+#  - rule: Activate form
+#    steps:
+#    - intent: shipping_address
+#    - action: account_shipping_address_form
+#    - active_loop: account_shipping_address_form
+    
+#  - rule: Submit form
+#    condition:
+    # Condition that form is active.
+#    - active_loop: account_shipping_address_form
+#    steps:
+    # Form is deactivated
+#    - action: account_shipping_address_form
+#    - active_loop: null
+#    - slot_was_set:
+#        - requested_slot: null
+    # The actions we want to run when the form is submitted.
+#    - action: action_submit

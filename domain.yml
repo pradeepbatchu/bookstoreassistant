@@ -1,0 +1,364 @@
+version: "2.0"
+
+intents:
+  - more_product
+  - customer_shop
+  - out_of_scope
+  - action_product_search:
+      use_entities:
+        - productname
+  - order_status
+  - products_list
+  - product_search_by_price
+  - product_search_by_range
+  - product_search_by_author_name
+  - customer_greet
+  - react_negative
+  - react_positive
+  - store_location
+  - customer_contact
+  - customer_return_order
+  - customer_bye
+  - customer_order_status
+  - customer_help
+  - customer_goodbye
+  - bot_challenge
+  - affirm
+  - cancel_order
+  - feedback
+  - customer_end_conversation
+  - customer_payment_refund_status
+  - customer_cancel_shipping_address
+  - customer_shipping_address
+  - customer_tracking_shipping
+  - customer_repeat_same_order
+  - customer_select_order
+  - order_list
+  - customer_menu
+  - customer_shop_by_categories
+  - cusrtomer_ordernumber_input
+  - customer_book_search_name
+  - customer_track_different_order
+  - customer_enter_order_number
+  - customer_return_order_success
+  - customer_track_my_order
+  - conversation_continue
+  - thank_you
+  - shipping_address
+  - user_address
+  - user_informations
+  
+entities:
+  - name
+  - purchaseorder
+  - productname
+  - shop
+  - language
+  - price
+  - time
+  - number
+  - more_less
+  - author_name
+  - first_name
+  - last_name
+  - address
+  - city
+  - state
+  - country
+  - postal_code
+  - phone_number
+  - year
+  - umsession
+  - dcsession
+slots:
+  more_less:
+    type: text
+  time:
+    type: text
+  price:
+    type: text
+  author_name:
+    type: text
+  productname:
+    type: text
+  user:
+    type: text
+  feedback:
+    type: text
+  medium:
+    type: text
+  limit:
+    type: text
+  name:
+    type: text
+  purchaseorder:
+    type: text
+  orderid:
+    type: text
+  product:
+    type: text
+  skip:
+    type: text
+  umsession:
+    type: text
+  dcsession:
+    type: text
+  number:
+    type: text
+  language:
+    type: categorical
+    values:
+      - english
+  first_name:
+    type: text
+  last_name:
+    type: text
+  address:
+    type: text
+  state:
+    type: text
+  city:
+    type: text
+  country:
+    type: text
+  postal_code:
+    type: text
+  phone_number:
+    type: text
+  year:
+    type: text
+responses:
+  utter_customer_greet:
+  - text: Good to see you! below are quick links for you
+    buttons:
+    - title: Shop By Categories
+      payload: /action_customer_product
+    - title: Show Products
+      payload: /action_customer_product
+    - title: Track My Order
+      payload: /customer_track_my_order
+    - title: My Orders List
+      payload: /action_customer_product
+    - title: Contact Us
+      payload: /action_customer_product
+  utter_customer_contact:
+  - text: You can reach us on (012)0090 678 or write to us on info@store.in
+  utter_customer_bye:
+  - text: Goodbye!
+  - text: Bye!
+  - text: Ciao!
+  - text: Bye, was nice talking to you!
+  - text: Bye bye!
+  utter_default:
+  - text: Sorry, I didn't understand! Can you rephrase again?
+  - text: Didn't understand what you said. Can you rephrase again?
+  utter_ask_affirm:
+  - text: okay
+  utter_ask_rephrase:
+  - text: Can you please rephrase again?
+  utter_customer_order_status:
+  - text: |
+      Can you provide your order number please?
+  utter_customer_help:
+  - text: |
+      please select your search item of interest
+    buttons:
+    - title: Show Products
+      payload: /action_customer_product
+    - title: Shop By Categories
+      payload: /customer_shop_by_categories
+    - title: Contact Us
+      payload: /customer_contact
+
+  utter_customer_shop_by_categories:
+  - text: |
+      Select the category which you like to shop
+    buttons:
+    - title: Childrens Books
+      payload: /action_product
+    - title: Story Books
+      payload: /action_product
+    - title: Fiction & Novel
+      payload: /action_product
+    - title: Biographies & Momories
+      payload: /action_product
+    - title: Art & Photography
+      payload: /action_product
+    - title: Mystery & Suspence
+      payload: /action_product
+  utter_enter_email:
+  - text: |
+      Can you please enter your email?
+  utter_chitchat:
+  - text: |
+      Yep, I am"
+  - text: |
+      I am indeed a search bot.
+  utter_out_of_scope/non_english:
+  - text: I only understand/speak English, I'm sorry.
+  utter_out_of_scope/other:
+  - text: "I can't help you with that, I'm sorry."
+  utter_out_of_scope:
+  - text: |
+      I'm your information chat assistant. I can help in finding best products of your interest.
+    buttons:
+    - title: Show Products
+      payload: /action_customer_product
+    - title: Shop By Categories
+      payload: /customer_shop_by_categories
+    - title: Contact Us
+      payload: /customer_contact
+  utter_enter_mobile:
+  - text: |
+      Can you please enter mobile number?
+  utter_enter_name:
+  - text: |
+      Can you please enter your name?
+  utter_react_negative:
+  - text: 😕
+  - text: 😞
+  - text: 😥
+  - text: 😢
+  utter_react_positive:
+  - text: 😄
+  - text: 😊
+  - text: 👏
+  - text: 😍
+  utter_canthelp:
+  - text:  |
+      I'm sorry I couldn't help you, I can help you on below things
+    buttons:
+    - title: Show Products
+      payload: /action_customer_product
+    - title: Shop By Categories
+      payload: /customer_shop_by_categories
+    - title: Contact Us
+      payload: /customer_contact
+  utter_customer_end_conversation:
+  - text: |
+      Please share your valuable feedback with us.
+    buttons:
+    - title: Excellent
+      payload: /excellent
+    - title: Good
+      payload: /good
+    - title: Average
+      payload: /average
+    - title: Poor
+      payload: /poor
+  utter_cusrtomer_ordernumber_input:
+  - text: |
+       please select your order number?
+  utter_customer_select_order:
+  - text: |
+       please select your order number?
+  utter_customer_track_different_order:
+  - text: |
+      I want to track different order
+    buttons:
+    - title: I want to Track A Different Order
+      payload: /customer_enter_order_number
+    - title: Main Menu
+      paylaod: /customer_main_menu
+  utter_customer_return_order_success:
+  - text: |
+      Ok our pick-up boy will collect the return package on (selected date) from the delivered address.
+  utter_customer_track_my_order:
+  - text: |
+      Track my order
+  utter_customer_enter_order_number:
+  - text: |
+      please check your orders in account
+  utter_conversation_continue:
+  - text: |
+      Is there any thing else I can help with?
+    buttons:
+      - title: No, I got my answer
+        payload: /customer_end_conversation
+      - title: Yes, I have another query
+        payload: /customer_help
+  utter_thank_you:
+  - text: |
+      Thank you!
+  utter_thumbsup:
+    - text: |
+        glad it helped
+
+## shipping_address_form
+#  utter_ask_first_name:
+#    - text: |
+#        Enter your first name?
+#  utter_ask_last_name:
+#    - text: |
+#        Enter your last name?
+#
+#  utter_ask_address:
+#    - text: |
+#        Enter your address?
+#
+#  utter_ask_city:
+#    - text: |
+#        Enter City?
+#
+#  utter_ask_state:
+#    - text: |
+#        Enter State?
+#
+#  utter_ask_postal_code:
+#    - text: |
+#        Enter Zipcode?
+#  utter_ask_country:
+#    - text: |
+#        Enter country?
+#  utter_ask_phone_number:
+#    - text: |
+#        Enter phone number?
+
+actions:
+  - action_greet
+  - action_product
+  - action_product_search
+  - action_more_product
+  - action_order_list
+  - action_trackmyorder_order_list
+  - action_cancel_order_list
+  - action_order_status
+  - action_store_location
+  - action_default_fallback
+  - action_feedback
+  - utter_out_of_scope
+  - action_product_search_by_range
+  - action_product_search_by_author_name
+  - action_product_search_by_price
+  - action_submit
+  - action_product_search_mutiple_entities
+  - action_show_user_address
+  - action_user_address
+  - action_account_info
+
+forms:
+  account_shipping_address_form:
+    first_name:
+      - type: from_entity
+        entity: first_name
+    last_name:
+      - type: from_entity
+        entity: last_name
+    address:
+      - type: from_entity
+        entity: address
+    city:
+      - type: from_entity
+        entity: city
+    state:
+      - type: from_entity
+        entity: state
+    country:
+      - type: from_entity
+        entity: country
+    postal_code:
+      - type: from_entity
+        entity: postal_code
+session_config:
+  session_expiration_time: 60  # value in minutes
+  carry_over_slots_to_new_session: true
